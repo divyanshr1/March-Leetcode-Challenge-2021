@@ -36,11 +36,29 @@ n == nums.length
 0 <= nums[i] <= n
 All the numbers of nums are unique.
 
-C++ Code : */
+C++ Solution 1: 
 
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
         return (nums.size() * (nums.size()+1) / 2 ) - (accumulate(nums.begin(),nums.end(),0));
+    }
+};
+
+Time Complexity :- O(N)
+Space Complexity :-  O(1)
+
+C++ Solution 2 : - More Optimized Solution using bit manipulation */
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int a = 0,b=0;
+        for(int i=0;i<nums.size();i++)
+        {
+           a = a ^ i+1;
+           b = b ^ nums[i];
+        }
+        return (a^b);
     }
 };
