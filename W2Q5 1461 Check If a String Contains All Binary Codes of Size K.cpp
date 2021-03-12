@@ -54,4 +54,4 @@ public:
 };
 
 /*Time Complexity :- O(N*K);
-	Space Complexity :- O(2^K);*/
+	Space Complexity :- O(min(N,2^K)*K);*/
